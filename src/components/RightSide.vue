@@ -4,14 +4,25 @@
         <SearchBar class="mt-16"/>
         <main class="mt-16">
             <div class="title font-bold" style="font-size: 40px">Discover new</div>
-            <ul class="tabs mt-8 text-xl flex space-between" style="color: #686F75">
-                <li class="tab active">Places</li> 
-                <li class="tab">Experiences</li> 
-                <li class="tab">Homes</li>    
-            </ul>
-            <div class="cards">
-                <Card />
-            </div>
+            <TabNav class="mt-8" :tabs="['Places', 'Experiences', 'Home']" :selected="selected" @selected="setSelected" >
+                <Tab :isSelected="selected === 'Places'" >
+                    <CardsCarousel>
+                        <Card></Card>
+                        <Card></Card>
+                        <Card></Card>
+                    </CardsCarousel>
+                </Tab>
+                <Tab :isSelected="selected === 'Experiences'" >
+                    <h1>More test text</h1>
+                </Tab>
+                <Tab :isSelected="selected === 'Home'" >
+                    <ul>
+                        <li>List test 1</li>
+                        <li>List test 2</li>
+                        <li>List test 3</li>
+                    </ul>
+                </Tab>
+            </TabNav>
         </main>
     </div>
 </template>
@@ -19,6 +30,9 @@
 <script>
 import SearchBar from './SearchBar';
 import Header from './Header';
+import TabNav from './TabNav';
+import Tab from './Tab.vue';
+import CardsCarousel from './CardsCarousel';
 import Card from './Card';
 
 export default {
@@ -26,7 +40,20 @@ export default {
     components: {
         SearchBar,
         Header,
-        Card
+        TabNav,
+        Tab,
+        CardsCarousel,
+        Card,
+    },
+    data() {
+        return {
+            selected: 'Places'
+        }
+    },
+    methods: {
+        setSelected(tab) {
+            this.selected = tab;
+        }
     }
 }
 </script>
@@ -34,8 +61,5 @@ export default {
 <style scoped>
     .right-side {
         max-width: 535px;
-    }
-    .tab {
-        @apply mr-8;
     }
 </style>

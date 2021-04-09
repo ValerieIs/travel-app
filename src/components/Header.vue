@@ -4,7 +4,7 @@
             <div></div>
             <div></div>
         </div>
-        <div class="account flex items-center float-right">
+        <div class="account flex items-center justify-end">
             <div class="mr-4 text-base">Hi, Stephan</div>
             <div class="avatar w-10 h-10"></div>
         </div>

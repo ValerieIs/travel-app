@@ -1,7 +1,9 @@
 <template>
   <div id="app" class="box-border">
-    <LeftSide />
-    <RightSide />
+    <div class="container grid">
+      <LeftSide />
+      <RightSide />
+    </div>
   </div>
 </template>
 
@@ -21,7 +23,11 @@ export default {
 <style>
 #app {
   font-family: 'Roboto';
-  display: grid;
+  
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
   grid-template-columns: 63% 1fr;
 }
 </style>

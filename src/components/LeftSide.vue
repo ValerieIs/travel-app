@@ -4,15 +4,16 @@
             <img src="../assets/images/logo.svg" alt="travel agency logo">
             <div class="ml-5 text-xl font-semibold">Travel<span class="font-light">.app</span></div>
         </div>
-        <div class="bottom absolute bottom-0 left-0" style="padding: inherit">
+        <div class="bottom absolute left-0" style="padding: inherit; top: 50%">
             <h1 class="font-bold text-6xl" style="line-height: 64px">The Whole World <br>
             in One Place</h1>
             <h2 class="mt-8 font-light text-lg" style="line-height: 29px">Discover the most unique places, experiences<br>
                 and amazing homes around the world.</h2>
             <button class="mt-8 py-5 w-44 text-base rounded-xl" style="background-color: #8BB957">Sign Up</button>
             <div class="slider flex mt-16 items-center">
-                <div class="slider__dots-line relative mr-12 z-1">
-                    <div class="dot absolute left-0 z-10"></div>
+                <div class="relative" style="">
+                    <div class="slider__dots-line mr-12"></div>
+                    <div class="slider__dot absolute top-0 left-0 "></div>
                 </div>
                 <div class="slider__counter font-light text-lg">
                     <span class="font-bold">01</span> &ndash; 05
@@ -40,12 +41,11 @@ export default {
         opacity: 0.3;
         border-radius: 1px;
     }
-    .dot {
-        mix-blend-mode: overlay;
+    .slider__dot {
         width: 30%;
         height: 2px;
         background: white;
-        transition: 0.2s all;
-        opacity: 100%;
+        transition: 1s all;
+        border-radius: 1px;
     }
 </style>
